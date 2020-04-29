@@ -1,5 +1,6 @@
 import { uuid } from 'uuidv4';
 
+export type transactionType = 'income' | 'outcome';
 class Transaction {
   id: string;
 
@@ -7,7 +8,7 @@ class Transaction {
 
   value: number;
 
-  type: 'income' | 'outcome';
+  type: transactionType;
 
   constructor({ title, value, type }: Omit<Transaction, 'id'>) {
     this.id = uuid();
